@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage';
 import ProductsPage from './pages/ProductsPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import ProductDetail from './components/ProductDetail';
+import PageNotFound from './pages/PageNotFound';
 
 
 
@@ -16,8 +17,7 @@ const App = () => {
         <Route path="/productspage" element={<ProductsPage />} />
         <Route path="/productdetail" element={<ProductDetailPage />} />
         <Route path="/product-detail/:productId" element={<ProductDetail />} />
-  
-  
+        <Route path="*" element={<PageNotFound />} />
       </Route>
     )
   );

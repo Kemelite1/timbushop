@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        baseBlack: '#0a0b0b',
-        baseWhite: '#fafafa',
+        baseblack: '#0a0b0b',
+        basewhite: '#fafafa',
         primary: '#008080',
         primary100: '#d5ffff',
         primary200: '#aaffff',
@@ -55,6 +55,7 @@ export default {
         neutral950: '#0A0B0B',
         neutral1000: '#0e0d0d', 
         herobg: '#f5f5f5',
+        navbg: '#ffffff'
       },
       fontFamily: {
         'primary': [ 'Plus Jakarta Sans', 'sans-serif'],
