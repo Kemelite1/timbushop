@@ -14,14 +14,14 @@ const Hero = () => {
             <p className="hidden lg:block text-secondary1000 text-lg md:text-[28px] font-normal font-primary leading-tight md:leading-[33.60px]">
               Shop for men, women, and kids at affordable rates
             </p>
-            <div className="mb-20 h-[72px] px-8 md:px-12 py-[23px] bg-primary rounded-[10px] flex justify-center items-center gap-2.5 ">
-              <Link to='/productspage' className=" px-4 w-[126px] h-48px text-navbg text-lg md:text-2xl font-semibold font-primary leading-tight md:leading-[28.80px] md:w-[216px] md:h-[72px]">
+            <div className="mb-20 h-[72px] px-8 md:px-[48px] md:py-[23px] md:gap-[10px] bg-primary rounded-[10px] flex justify-center items-center gap-2.5 md:w-[216px] md:h-[72px]">
+              <Link to='/productspage' className=" w-[120px] h-29px text-navbg text-lg md:text-2xl font-semibold font-primary md:leading-[28.80px] ">
                 Shop Now
               </Link>
             </div>
           </div>
         </div>
-        <img className="w-[396px] h-[397px] md:w-[439px] rounded-3xl md:order-2 order-1 md:mb-0 " src={HeroImage} alt="Hero" />
+        <img className="w-[396px] h-[397px] mt-10 md:w-[439px] rounded-3xl md:order-2 order-1 md:mb-0 " src={HeroImage} alt="Hero" />
       </div>
     </div>
   );
