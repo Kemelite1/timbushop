@@ -1,12 +1,12 @@
 import { FaUser, FaSearch, FaShoppingCart } from "react-icons/fa";
-
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <nav className="w-full fixed top-0 left-0 px-[88px] py-[30px] bg-[#FFFFFF] flex justify-between items-center">
-      <a className="text-[18px] text-primary font-plus-jakarta-sans font-bold leading-[21.6px]">
+      <Link to="/" className="text-[18px] text-primary font-primary font-bold leading-[21.6px]">
         Timbu cloud shop
-      </a>
+      </Link>
       <div className="hidden md:flex space-x-6">
         <a href="#" className="text-[18px] font-plus-jakarta-sans font-semibold">All Products</a>
         <a href="#" className="text-[18px] font-plus-jakarta-sans font-semibold">Men</a>
