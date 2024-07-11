@@ -57,40 +57,40 @@ const AllProducts = () => {
     { id: 20, image: Image20, name: 'KAPTIR 3.0 SHOES', description: 'Women’s Shoe', price: 'NGN 380,000' },
   ];
 
-  const displayedProducts = windowWidth < 768 ? products.slice(0, 8) : products;
-
   const handleProductClick = (product) => {
     navigate(`/product-detail/${product.id}`, { state: { product } });
   };
 
+  const displayedProducts = windowWidth < 768 ? products.slice(0, 8) : products;
+
   return (
-    <section className="px-20 py-32 flex flex-col items-center">
+    <section className="px-4 md:px-20 py-32 flex flex-col items-center">
       <h1 className="text-center text-secondary1000 text-[32px] font-bold mb-12 leading-[38.4px]">Products</h1>
-      <div className="w-[644px] h-[88px] p-2 bg-[#F1F1F1] rounded-[10px] justify-center items-center inline-flex">
-        <div className="justify-between items-center gap-4 flex">
-          <div className="pl-14 pr-[87px] pt-[22px] pb-[21px] bg-[#FFFFFF] rounded-md justify-center items-center flex">
-            <p className="text-[#000000] text-[24px] font-normal font-['Plus Jakarta Sans'] leading-[28.80px]">All Brands</p>
+      <div className="w-full max-w-[644px] h-[88px] p-2 bg-[#F1F1F1] rounded-[10px] flex justify-center items-center mb-12">
+        <div className="flex justify-between items-center gap-4 w-full">
+          <div className="flex-1 p-2 bg-white rounded-md flex justify-center items-center">
+            <p className="text-black text-[24px] font-normal">All Brands</p>
           </div>
-          <div className="h-[72px] pt-[22px] pb-[21px] rounded-md justify-center items-center flex">
-            <p className="text-[#000000] text-2xl font-normal font-['Plus Jakarta Sans'] leading-[28.80px]">Nike</p>
+          <div className="flex-1 p-2 rounded-md flex justify-center items-center">
+            <p className="text-black text-2xl font-normal">Nike</p>
           </div>
-          <div className="px-[73px] pt-[22px] pb-[21px] rounded-md justify-center items-center flex">
-            <p className="text-[#000000] text-2xl font-normal font-['Plus Jakarta Sans'] leading-[28.80px]">Adidas</p>
+          <div className="flex-1 p-2 rounded-md flex justify-center items-center">
+            <p className="text-black text-2xl font-normal">Adidas</p>
           </div>
-          <div className="h-[72px] pt-[22px] pb-[21px] rounded-md justify-center items-center flex">
-            <p className="text-[#000000] text-2xl font-normal font-['Plus Jakarta Sans'] leading-[28.80px]">Puma</p>
+          <div className="flex-1 p-2 rounded-md flex justify-center items-center">
+            <p className="text-black text-2xl font-normal">Puma</p>
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
         {displayedProducts.map((product) => (
           <article
             key={product.id}
             className="w-full items-center gap-4 cursor-pointer"
             onClick={() => handleProductClick(product)}
           >
-            <img className="w-full h-64 object-cover rounded-lg" src={product.image} alt={product.name} />
-            <div className="text-center">
+            <img className="w-full h-48 md:h-64 object-cover rounded-lg" src={product.image} alt={product.name} />
+            <div className="text-center mt-4">
               <h2 className="text-stone-800 text-lg font-semibold">{product.name}</h2>
               <p className="text-stone-600 text-base">{product.description}</p>
               <p className="text-stone-800 text-lg font-semibold">{product.price}</p>
