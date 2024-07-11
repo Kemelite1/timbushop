@@ -69,16 +69,16 @@ const AllProducts = () => {
       <div className="w-full max-w-[644px] h-[88px] p-2 bg-[#F1F1F1] rounded-[10px] flex justify-center items-center mb-12">
         <div className="flex justify-between items-center gap-4 w-full">
           <div className="flex-1 p-2 bg-white rounded-md flex justify-center items-center">
-            <p className="text-black text-[24px] font-normal">All Brands</p>
+            <p className="w-[65px] h-[17px] text-baseblack text-[14px] font-normal leading-[16.8px]">All Brands</p>
           </div>
           <div className="flex-1 p-2 rounded-md flex justify-center items-center">
-            <p className="text-black text-2xl font-normal">Nike</p>
+            <p className="w-[30px] h-[17px] text-baseblack text-[14px] font-normal leading-[16.8px]">Nike</p>
           </div>
           <div className="flex-1 p-2 rounded-md flex justify-center items-center">
-            <p className="text-black text-2xl font-normal">Adidas</p>
+            <p className="w-[46px] h-[17px] text-baseblack text-[14px] font-normal leading-[16.8px]">Adidas</p>
           </div>
           <div className="flex-1 p-2 rounded-md flex justify-center items-center">
-            <p className="text-black text-2xl font-normal">Puma</p>
+            <p className="w-[38px] h-[17px] text-baseblack text-[14px] font-normal leading-[16.8px]">Puma</p>
           </div>
         </div>
       </div>
