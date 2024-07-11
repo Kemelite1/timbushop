@@ -27,7 +27,7 @@ const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden absolute top-0 right-0 bg-white h-screen w-[70%] max-w-sm shadow-lg z-50 p-4">
+        <div className="md:hidden absolute top-0 right-0 bg-white h-[861px] w-[220px] max-w-sm shadow-lg z-50 p-4">
           <div className="flex flex-col h-full">
             <div className="flex justify-end">
               <FaTimes onClick={toggleMenu} className='cursor-pointer text-baseblack mb-4' />
