@@ -1,15 +1,22 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { FaStar, FaShoppingCart, FaTimes } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { useCart } from './CartContext';
 
 const ProductDetail = () => {
-  const { state } = useLocation(); //destructure the state from the useLocation hook
+  const { state } = useLocation(); // Destructure the state from the useLocation hook
   const { product } = state;
-  const navigate = useNavigate(); // get the navigate function
+  const navigate = useNavigate(); 
+  const { addToCart } = useCart(); // Get the addToCart function from the cart context
 
   // Function to handle closing the product detail page
   const handleClose = () => {
-    navigate(-1); // navigate to the previous page
+    navigate(-1); // Navigate to the previous page
+  };
+
+  // Function to handle adding the product to the cart
+  const handleAddToCart = () => {
+    addToCart(product);
+    navigate('/cart'); // Navigate to the cart page
   };
 
   return (
@@ -21,10 +28,10 @@ const ProductDetail = () => {
       />
       <div className="flex flex-col justify-start items-start gap-6 ml-0 md:ml-8 md:w-[671px] md:h-[652px] md:gap-[24px]">
         <div className="flex flex-col gap-6 md:w-[671px] md:h[556px]">
-          {/* product name and close icon */}
+          {/* Product name and close icon */}
           <div className='md:w-[671px] md:h-[32px] md:flex justify-between'>
             <div className='md:w-[410px] md:h[29px]'>
-              <h1 className=" text-secondary1000 font-primary font-semibold md:leading[28.8px] md:text-[24px] ">{product.name}</h1>
+              <h1 className="text-secondary1000 font-primary font-semibold md:leading[28.8px] md:text-[24px]">{product.name}</h1>
             </div>
             <div className='md:w-[32px] md:h-[32px]'>
               <FaTimes 
@@ -33,26 +40,26 @@ const ProductDetail = () => {
               />
             </div>
           </div>
-          {/* end of product name and close icon */}
+          {/* End of product name and close icon */}
 
-          {/* product price and delivery fee */}
+          {/* Product price and delivery fee */}
           <div className="flex flex-col gap-1 md:w[167px] md:h-[74px] md:gap[16px] ">
-            <p className="text-secondary1000 font-primary font-bold md:text-[28px] md:leading-[33.6px] ">{product.price}</p>
+            <p className="text-secondary1000 font-primary font-bold md:text-[28px] md:leading-[33.6px]">{product.price}</p>
             <p className="text-[16px] items-center font-primary font-normal text-[#5C5C5C] md:leading-[24px] md:w-[187px] md:h-[24px]">Delivery fee NGN 1,000</p>
           </div>
-          {/* end of product price and delivery fee */}
+          {/* End of product price and delivery fee */}
 
           <div className='md:w-[360px] md:h-[72px] md:gap-[16px]'>
             <p className="font-primary font-normal text-warning200 md:text-[16px] md:leading-[24px] md:w-[360px] md:h-[24px]">Few units left</p>
             <div className="flex items-center gap-[18px] md:w-[360px] md:h-[32px]">
               <div className="flex items-center md:gap-[8px] md:w-[192px] md:h-[32px]">
-                <span className="w-8 h-8  md:w-[22.82px] md:h-[21.81px] md:top-[4.76px] md:left-[4.59px]"><FaStar className='text-[#ECBC12]'/></span>
                 <span className="w-8 h-8 md:w-[22.82px] md:h-[21.81px] md:top-[4.76px] md:left-[4.59px]"><FaStar className='text-[#ECBC12]'/></span>
                 <span className="w-8 h-8 md:w-[22.82px] md:h-[21.81px] md:top-[4.76px] md:left-[4.59px]"><FaStar className='text-[#ECBC12]'/></span>
-                <span className="w-8 h-8 md:w-[22.82px] md:h-[21.81px] md:top-[4.76px] md:left-[4.59px] "><FaStar className='text-[#ECBC12]'/></span>
+                <span className="w-8 h-8 md:w-[22.82px] md:h-[21.81px] md:top-[4.76px] md:left-[4.59px]"><FaStar className='text-[#ECBC12]'/></span>
+                <span className="w-8 h-8 md:w-[22.82px] md:h-[21.81px] md:top-[4.76px] md:left-[4.59px]"><FaStar className='text-[#ECBC12]'/></span>
                 <span className="w-8 h-8 md:w-[22.82px] md:h-[21.81px] md:top-[4.76px] md:left-[4.59px]"><FaStar className='text-neutral200' /></span>
               </div>
-              <p className=" text-secondary1000 font-primary font-normal md:w-[149px] md:h-[24px] md:text-[16px] leading-[24px]" >(300 verified rating)</p>
+              <p className="text-secondary1000 font-primary font-normal md:w-[149px] md:h-[24px] md:text-[16px] leading-[24px]">(300 verified rating)</p>
             </div>
           </div>
         </div>
@@ -80,9 +87,12 @@ const ProductDetail = () => {
           </div>
         </div>
         <div className='flex flex-col md:w-[671px] md:h-[72px]'>
-          <button className="bg-primary text-[#FFFFFF] font-primary text-2xl font-semibold py-3 px-6 rounded-lg leading-[28.8px] flex items-center">
+          <button
+            onClick={handleAddToCart} //  onClick to handle add to cart
+            className="bg-primary text-[#FFFFFF] font-primary text-2xl font-semibold py-3 px-6 rounded-lg leading-[28.8px] flex items-center"
+          >
             <FaShoppingCart className='text-[#FAFAFA] mr-2' /> 
-            <Link to='/cart' className="mx-auto">Add to Cart</Link>
+            Add to Cart
           </button>
         </div>
       </div>
